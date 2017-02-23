@@ -26,6 +26,7 @@
   "homepage": "https://github.com/ycmjason/bouncy-forever#readme",
   "dependencies": {
     "bouncy": "^3.2.2",
-    "forever": "^0.15.3"
+    "commander": "^2.9.0",
+    "forever-monitor": "^1.7.1"
   }
 }
