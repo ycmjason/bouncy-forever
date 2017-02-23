@@ -1,0 +1,31 @@
+{
+  "name": "bouncy-forever",
+  "version": "0.0.1",
+  "description": "Wiring up bouncy and forever to allow multiple domain names to be mapped to different servers listening on different ports.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jason Yu <me@ycmjason.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ycmjason/bouncy-forever.git"
+  },
+  "keywords": [
+    "bouncy",
+    "forever",
+    "vhost",
+    "virtual",
+    "host",
+    "pm2"
+  ],
+  "bugs": {
+    "url": "https://github.com/ycmjason/bouncy-forever/issues"
+  },
+  "homepage": "https://github.com/ycmjason/bouncy-forever#readme",
+  "dependencies": {
+    "bouncy": "^3.2.2",
+    "forever": "^0.15.3"
+  }
+}
