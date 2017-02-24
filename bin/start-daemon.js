@@ -1,5 +1,9 @@
 #!/usr/bin/env node
-console.log(process.execPath);
+if(!process.argv[2]){
+  require('./start-server')();
+  process.exit(0);
+}
+
 var daemon = require("daemonize2").setup({
   main: "./start-server.js",
   name: "bouncy-forever-server",
@@ -7,7 +11,7 @@ var daemon = require("daemonize2").setup({
   argv: [''].concat(process.argv)
 });
  
-switch (process.argv[2]) {
+switch(process.argv[2]) {
 
   case "start":
     daemon.start();
@@ -24,5 +28,9 @@ switch (process.argv[2]) {
     break;
 
   default:
-    console.log("Usage: [start|stop|restart]");
+    console.log("Usage: bouncyforever [start|stop|restart]");
+    console.log("Usage: bouncyforever");
+    break;
+
+
 }
