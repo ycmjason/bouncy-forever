@@ -30,6 +30,7 @@
     "bouncy": "^3.2.2",
     "chalk": "^1.1.3",
     "commander": "^2.9.0",
+    "daemonize2": "^0.4.2",
     "forever-monitor": "^1.7.1",
     "freeport": "^1.0.5",
     "homedir": "^0.6.0",

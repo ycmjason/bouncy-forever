@@ -1,8 +1,10 @@
 #!/usr/bin/env node
+console.log(process.execPath);
 var daemon = require("daemonize2").setup({
   main: "./start-server.js",
   name: "bouncy-forever-server",
-  pidfile: "./bouncy-forever-server.pid"
+  pidfile: "./bouncy-forever-server.pid",
+  argv: process.argv.slice(1)
 });
  
 switch (process.argv[2]) {
