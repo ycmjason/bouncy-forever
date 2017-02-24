@@ -4,7 +4,7 @@ var daemon = require("daemonize2").setup({
   main: "./start-server.js",
   name: "bouncy-forever-server",
   pidfile: "./bouncy-forever-server.pid",
-  argv: process.argv.slice(1)
+  argv: [''].concat(process.argv)
 });
  
 switch (process.argv[2]) {
@@ -18,8 +18,9 @@ switch (process.argv[2]) {
     break;
 
   case "restart":
-    daemon.stop();
-    daemon.start();
+    daemon.stop(function(){
+      daemon.start();
+    });
     break;
 
   default:

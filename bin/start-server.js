@@ -2,7 +2,7 @@
 var homedir = require('homedir');
 var mkpath = require('mkpath').sync;
 
-var sysout = require('../lib/util/sysout');
+var logger = require('../lib/util/logger');
 var config = require('../lib/core/config');
 
 var PORT = process.env.PORT || 8080;
@@ -15,12 +15,17 @@ try{
   var config_path = process.argv[2]? process.cwd() + '/' + process.argv[2]: DEFAULT_CONFIG_PATH;
   var config = config(config_path, PORT);
 } catch(e){
-  sysout.error(`Cannot find config file at ${config_path}`);
+  logger.error(`Cannot find config file at ${config_path}`);
   process.exit(1);
 }
 
-require('../lib/core/setup-bouncy-forever-server')(config, function(server){
+require('../lib/core/setup-bouncy-forever-server')(config, logger, function(server){
   server.listen(PORT, function(){
-    sysout.log(`bouncy-forever server launched and listening on port ${PORT}...`);
+    logger.log(`bouncy-forever server launched and listening on port ${PORT}...`);
   });
+});
+
+process.on('SIGINT', () => {
+  logger.log(`================ exited ====================`);
+  process.exit(0);
 });
