@@ -27,6 +27,8 @@
   "dependencies": {
     "bouncy": "^3.2.2",
     "commander": "^2.9.0",
-    "forever-monitor": "^1.7.1"
+    "forever-monitor": "^1.7.1",
+    "freeport": "^1.0.5",
+    "homedir": "^0.6.0"
   }
 }
