@@ -4,6 +4,8 @@
   "description": "Wiring up bouncy and forever to allow multiple domain names to be mapped to different servers listening on different ports.",
   "main": "index.js",
   "scripts": {
+    "start": "./bin/start-server.js",
+    "start-daemon": "./bin/start-daemon.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jason Yu <me@ycmjason.com>",
@@ -26,6 +28,7 @@
   "homepage": "https://github.com/ycmjason/bouncy-forever#readme",
   "dependencies": {
     "bouncy": "^3.2.2",
+    "chalk": "^1.1.3",
     "commander": "^2.9.0",
     "forever-monitor": "^1.7.1",
     "freeport": "^1.0.5",
