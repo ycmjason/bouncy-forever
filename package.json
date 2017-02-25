@@ -1,11 +1,13 @@
 {
   "name": "bouncy-forever",
-  "version": "0.0.1",
+  "bin": {
+    "bouncyforever": "./bin/start-daemon.js"
+  },
+  "version": "v0.0.1",
   "description": "Wiring up bouncy and forever to allow multiple domain names to be mapped to different servers listening on different ports.",
   "main": "index.js",
   "scripts": {
-    "start": "./bin/start-server.js",
-    "start-daemon": "./bin/start-daemon.js",
+    "start": "./bin/start-daemon.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jason Yu <me@ycmjason.com>",

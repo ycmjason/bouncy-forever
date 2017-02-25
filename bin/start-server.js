@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 var homedir = require('homedir');
 var mkpath = require('mkpath').sync;
 
@@ -16,6 +15,7 @@ try{
   var config = config(config_path, PORT);
 } catch(e){
   logger.error(`Cannot find config file at ${config_path}`);
+  throw e;
   process.exit(1);
 }
 
@@ -26,6 +26,6 @@ require('../lib/core/setup-bouncy-forever-server')(config, logger, function(serv
 });
 
 process.on('SIGINT', () => {
-  logger.log(`================ exited ====================`);
+  logger.log(`\n================ exited ====================`);
   process.exit(0);
 });
